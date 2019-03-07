@@ -19,9 +19,9 @@ Running the simulation is a two-step process:
 
 
 ## Creating the sampling points (*configurations*) for the integration
-This is done using a Markov-chain Monte Carlo (MCMC) method. This results in N different sampling points [phi]_j, j in {1,...,N} that are distributed according to the distribution p[phi].
+This is done using a Markov-chain Monte Carlo (MCMC) method. This results in N_{steps} different sampling points [phi]_j, j in {1,...,N_{steps}} that are distributed according to the distribution p[phi].
 
-You can choose here between using the well known Metropolis algorithm or the Cluster algorithm, which works very well for this model. The MCMC methods need some thermalization phase before giving some reasonable values.
+You can choose here between using the well known Metropolis algorithm or the Cluster algorithm, which works very efficient (especially for small a) for this model, see <https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.62.361>. The MCMC methods need some thermalization phase before giving some reasonable values.
 
 ```cpp
 ./createConfig input/createConfig.in
@@ -37,3 +37,7 @@ The observable is computed for all configurations, Q[phi]_j. Because the configu
 ./computeCharge_MC input/computeCharge.in
 ```
 (The model and MCMC parameters specified in this file have to be the ones of the computed configurations.)
+
+
+## Comments
+I also wrote code for methods to test alternative integration methods, but haven't found time until now to refactor and put it here.
