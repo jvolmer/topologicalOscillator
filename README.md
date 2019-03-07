@@ -2,12 +2,15 @@
 
 This program simulates the topological oscillator model. This is a simple one-dimensional model that has non-trivial characteristics, such as a topological charge. A topological charge is also present in lattice QCD models, therefore this model can be used to test ideas for new methods that should later be applied to four-dimensional lattice QCD.
 The topological osciallator describes a particle with some mass M moving on a cirle with radius R (moment of inertia of particle I=M*R^2) in time. Time is discretized in $d$ time slices with distance a (periodic boundaries are used). The action of the model is given by
+
 $S[\phi] = \frac{I}{a} \sum_{i=1}^d (1 - \cos(\phi_{i+1} - \phi_i))$
 
 The simulation computes the expectation value of an observable in the model, here for example the topological charge,
+
 $Q[\phi] = \frac{1}{2\pi} \sum_{i=1}^d (\phi_{i+1} - \phi_i) \mod 2\pi$
+
 Computing the expectation value is done by integrating the weighted observable over all possible model-configurations,
-$<Q> = \int d_1 ... \int d\phi_d \frac{Q[\phi] \e{-S[\phi]}}{\int d_1 ... \int d\phi_d \e{-S[\phi]}}$.
+![equation](https://latex.codecogs.com/gif.latex?%3CQ%3E%20%3D%20%5Cfrac%7B%5Cint%20%5Cmathrm%7Bd%7D%5Cvarphi_1%20...%20%5Cint%20%5Cmathrm%7Bd%7D%5Cvarphi_d%20Q%5B%5Cphi%5D%20%5Cmathrm%7Be%7D%5E%7B-S%5B%5Cphi%5D%7D%7D%7B%5Cint%20%5Cmathrm%7Bd%7D%5Cvarphi_1%20...%20%5Cint%20%5Cmathrm%7Bd%7D%5Cvarphi_d%20%5Cmathrm%7Be%7D%5E%7B-S%5B%5Cphi%5D%7D%7D)
 
 Running the simulation is a two-step process:
 ## Creating the sampling points (*configurations*) for the integration
