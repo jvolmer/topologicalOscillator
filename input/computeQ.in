@@ -1,0 +1,10 @@
+runName			normal
+I			10.0
+a			1.00
+xdim			4
+equilibrationAlgorithm	cluster
+Nsteps			1000000
+configDirectory		output/conf/
+outputDirectory		output/results/
+fileId			0
+verbosity		8
